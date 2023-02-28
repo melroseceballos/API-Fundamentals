@@ -1,4 +1,4 @@
-# Nintendo Commissions: Build a Pokedex
+# Nintendo Commissions: Building Pokedexes
 <p align="center"><img src="pokedex.png"></p>
 
 ## Background

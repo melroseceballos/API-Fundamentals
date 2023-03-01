@@ -5,7 +5,7 @@
 It is the early days of Pokemon, and Nintendo wants to build a website featuring various pokedexes from different regions! They turned to you to build out their site, and have given you access to their [pokemon data](https://pokeapi.co/).
 
 ## Part 1: The Kanto Pokedex
-Your first commission si to build out the Kanto Pokedex! You requirements are as follows:
+Your first commission is to build out the Kanto Pokedex! You requirements are as follows:
 
 - Use AJAX (axios or fetch) to query the PokeAPI for all pokemon URLs in the [Kanto pokedex endpoint](https://pokeapi.co/api/v2/pokedex/2/)
 - Create a carousel that cycles through each pokemon listed in the Kanto pokedex endpoint. Each slide of the carousel will display the following information:

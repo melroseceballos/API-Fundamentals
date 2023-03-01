@@ -43,3 +43,7 @@ fetchPokemon('https://pokeapi.co/api/v2/pokemon?limit=151&offset=0')
         document.body.append(table)
     })
 
+
+    // IMAGE CAROUSEL
+    const pokeImages = document.getElementsByClassName('imgPokemon');
+    

@@ -1,62 +1,45 @@
-//  Async function that will query an endpoint using fetch and convert the response to a JSON object
+// FETCHING POKEMON API 
 async function getPokemon(url) {
     return await fetch(url)
         .then(res => res.json())
 }
 
-// Get all pokemon's individual endpoints
+// GETTING POKEMON ENDPOINTS HERE
 getPokemon('https://pokeapi.co/api/v2/pokedex/2/')
     .then(data => {
 
         // Fetch & store data from each pokemon's endpoint
-        const allPokeData = []
+        const getPokemonData = []
         for (let pokemon of data.pokemon_entries) {
             const pokemonUrl = pokemon.pokemon_species.url.replace('-species', '')
             getPokemon(pokemonUrl)
                 .then(res => {
-                    allPokeData.push(res)
+                    getPokemonData.push(res)
                     const img = document.createElement('img');
-                    img.src = res.sprites.other["official-artwork"].front_default
+                    img.src = res.sprites.other["official-artwork"].front_default // CHANGE ME
                     document.getElementById('carousel-images').append(img)
                 })
-            console.log(allPokeData)
+                console.log(getPokemonData)
         }
 
-        // KEEP TRACK OF WHICH IMAGE IS SHOWING
+        // CAROUSEL HERE
         let currentImgIndex = 0;
         let previousImgIndex = 0;
-
-
-        // SELECT ALL IMAGE ELEMENTS
+        const prev = document.querySelector('.prev')
+        prev.addEventListener('click', () => navi(-1))
+        const next = document.querySelector('.next')
+        next.addEventListener('click', () => navi(1))
         const images = document.getElementsByTagName('img');
-
-        // CREATE A FUNCTION THAT WILL CYCLE THROUGH THE IMAGES, REGARDLESS OF WHICH BUTTONW AS PRESSED
-        function cycle(nextToPrevious) {
-            // set the index of the previous image to the index of the image that is currently being shown
+        function navi(nextToPrevious) {
             previousImgIndex = currentImgIndex
             currentImgIndex = currentImgIndex + nextToPrevious
-            // hide the previous image
             images[previousImgIndex].style.display = 'none';
-
-            // check if the next image index exists in our images array
             if (currentImgIndex >= images.length) {
-                // if the next image index does not exist, rest the index back to zero
                 currentImgIndex = 0;
             } else if (currentImgIndex < 0) {
-                // if the next image index does not exist, rest the index back to zero
                 currentImgIndex = images.length + nextToPrevious;
             }
-            // display the next image
             images[currentImgIndex].style.display = 'block'
         }
-
-
-        // ADD EVENT LISTENER TO PREVIOUS BUTTON
-        const prev = document.querySelector('.prev')
-        prev.addEventListener('click', () => cycle(-1))
-
-
-        // ADD EVENT LISTENER TO NEXT BUTTON
-        const next = document.querySelector('.next')
-        next.addEventListener('click', () => cycle(1))
+        
     })

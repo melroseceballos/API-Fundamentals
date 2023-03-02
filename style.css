@@ -18,7 +18,7 @@ body {
     font-weight: 800;
     font-size: 2.5em;
     margin-top: -1%;
-    color: #4caaa8;
+    color: lightsalmon;
     text-shadow: 1px 1px #f2cd99;
     letter-spacing: 2px;
 }
@@ -33,7 +33,7 @@ body {
 
 #carousel-images {
     width: 80%;
-    background: #fa8d8e;
+    background: rgb(251, 188, 166);
     padding: 10px;
     border-radius: 10px;
     box-sizing: border-box;
@@ -65,4 +65,8 @@ body {
     background: #fa8d8e;
     box-shadow: 1px 1px #f2cd99;
     color: white;
+}
+p{
+    color: #fa8d8e;
+    margin-top: -10px;
 }

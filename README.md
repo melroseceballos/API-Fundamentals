@@ -6,7 +6,6 @@ It is the early days of Pokemon, and Nintendo wants to build a website featuring
 
 ## Part 1: The Kanto Pokedex
 Your first commission is to build out the Kanto Pokedex! You requirements are as follows:
-
 - Use AJAX (axios or fetch) to query the PokeAPI for all pokemon URLs in the [Kanto pokedex endpoint](https://pokeapi.co/api/v2/pokedex/2/)
 - Create a carousel that cycles through each pokemon listed in the Kanto pokedex endpoint. Each slide of the carousel will display the following information:
     1. Pokemon name
@@ -29,7 +28,7 @@ Your first commission is to build out the Kanto Pokedex! You requirements are as
 
 
 ## Part 2: The Johto Pokedex
-- Nintendo loved your Kanto Pokedex! They just released a new region, and want you to include it's pokedex on your site. Additionally, they inform you many more regions will be created so you need to scale their website using Express.
+Nintendo loved your Kanto Pokedex! They just released a new region, and want you to include it's pokedex on your site. Additionally, they inform you many more regions will be created so you need to scale their website using Express.
 - Use AJAX (axios or fetch) to query the PokeAPI for all pokemon in the [Johto pokedex endpoint](https://pokeapi.co/api/v2/pokedex/3/)
 - Refactor your previous carousel into an EJS template called `carousel.ejs` that can be reused for both pokedexes
 - Create a route for each pokedex

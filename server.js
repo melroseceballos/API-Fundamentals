@@ -21,11 +21,11 @@ app.use(express.static('public'))
 
 // Mount routes
 app.get('/', function (req, res) {
-    data.getHouseData('https://wizard-world-api.herokuapp.com/Houses')
+    data.getHouseData('https://pokeapi.co/api/v2/pokedex/3/')
         .then(api => {
             res.render('home', {
                 houses: api.data,
-                title: "Pokemon Index"
+                title: "Pokemon"
             })
         })
 });

@@ -8,13 +8,11 @@ async function getPokemon(url) {
 getPokemon('https://pokeapi.co/api/v2/pokedex/2/')
     .then(data => {
 
-        // Fetch & store data from each pokemon's endpoint
-        const allPokeData = []
+        // Fetch data from each pokemon's endpoint
         for (let pokemon of data.pokemon_entries) {
             const pokemonUrl = pokemon.pokemon_species.url.replace('-species', '')
             getPokemon(pokemonUrl)
                 .then(res => {
-                    allPokeData.push(res)
                     const fig = document.createElement('figure');
                     fig.innerHTML =
                         `
